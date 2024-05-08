@@ -14,4 +14,4 @@ elif act == "search":
 
 #Error at input
 else: 
-    print("Input not a valid, pay attention")
+    print("Input not valid, pay attention")
