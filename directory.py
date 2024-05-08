@@ -19,6 +19,8 @@ class ContactList:
 
 contactList = ContactList()
 
+#From here I am just leaving some proves that do not attend to the functionality of the program. 
+
 paco = Contact("Paco", "5564554", "paco@gmail")
 
 contactList.addContact(paco)
