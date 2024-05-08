@@ -1,31 +1,29 @@
-#Start menu
-names = []
-ph_numbers = []
-emails = []
-print("Hello, welcome to your personal directory, how can I assist you today?")
-print("To look for a contact type: search")
-print("To add a new contact type: add")
-act = input("")
+class Contact:
+    def __init__(self, name, phone, email):
+        self.name = name
+        self.phone = phone
+        self.email = email
+    def __str__(self):
+        return f"""
+        Name: {self.name}
+        Phone: {self.phone}
+        Email: {self.email}
+        """
 
-#Search for a contact functionality
-if act == "add": 
-    name = input("Name:")
-    ph_num = input("Phone number:")
-    email = input("e-mail:")
-    print("Your contact info is:", name, ph_num, email)
-    ans1 = input("Do you want to proceed and save the contact? yes/no")
-    if ans1 == "yes":
-        names.append(name)
-        ph_numbers.append(ph_num)
-        emails.append(email)
-        print("Contact saved")
- #procedure to save the contact here
-    else:
-        print("Contact not saved")
-#Add contact functionality
-elif act == "search":
-        print("You selected to search for a contact")
+class ContactList:
+    contacts = []
+    def __str__(self):
+        return str([str(contact) for contact in self.contacts])
+    def addContact(self,contact):
+        self.contacts.append(contact)
 
-#Error at input
-else: 
-    print("Input not valid, pay attention")
+contactList = ContactList()
+
+paco = Contact("Paco", "5564554", "paco@gmail")
+
+contactList.addContact(paco)
+
+
+ana = Contact("Ana", "55454", "qnq@gmail.com")
+contactList.addContact(ana)
+print(paco.email)
